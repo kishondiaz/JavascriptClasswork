@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+	<title>Exercise 2A </title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+	  var ask = confirm('Would you like to display Hello World in a <h3> tag or into a <p> tag');
+	</script>
+  </head>
+  <body>
+	<script type="text/javascript">
+		
+		window.onload = function()
+		{
+			alert(ask);
+			if(ask)
+			{
+				document.write('This is in the h3 tag <h3>Hello World!</h3>');
+			}else
+			{
+				document.write('This is in the p tag <p>Hello World!</p>');
+			}
+		}
+	</script>
+  </body>
+</html>

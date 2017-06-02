@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Gallery</title>
+    <script type="text/javascript">
+      var imagearr = ['ashleyfixed.jpeg','black.jpeg','kaylin.jpg','kaylincopy2.jpeg','meshia.png'];
+    </script>
+  </head>
+  <body>
+    <header></header>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="./gallery.html">Gallery</a></li>
+        <li><a href="./about.html">About Me</a></li>
+        <li><a href="./contactme.html">Contact</a></li>
+        <li><a href="#">Future Projects</a></li>
+      </ul>
+    </nav>
+    <div id="content">
+      <ul>
+        <li><button id="leftbtn">next</button></li>
+        <li><img src="#" alt="#" width=0 height=0></li>
+        <li><button id="rightbtn">prev</button></li>
+      </ul>
+    </div>
+    <script type="text/javascript">
+      var imgcounter = 0;
+      var timer;
+      var mousenotmoving = true, inmotion = false;
+      
+      document.querySelector('img').width = 518; 
+        document.querySelector('img').height = 518; 
+      document.querySelector('img').src="../assets/images/"+imagearr[imgcounter]+"";
+      
+      document.querySelector('#leftbtn').addEventListener('click',function(){
+        if(imgcounter ==  imagearr.length){
+          imgcounter = 0;
+        }
+        console.log(imgcounter);
+        document.querySelector('img').src="../assets/images/"+imagearr[imgcounter]+"";
+        document.querySelector('img').width = 518; 
+        document.querySelector('img').height = 518;
+        mousenotmoving = false;
+        inmotion = true;
+        imgcounter++;
+      });
+      
+      document.querySelector('#rightbtn').addEventListener('click',function(){
+        if(imgcounter >= 5){
+          imgcounter = 0;
+        }
+        if(imgcounter ===  -1){
+          imgcounter = 4;
+        }
+        
+        
+        console.log(imgcounter);
+        document.querySelector('img').src="../assets/images/"+imagearr[imgcounter]+"";
+        document.querySelector('img').width = 518; 
+        document.querySelector('img').height = 518;
+        mousenotmoving = false;
+        inmotion = true;
+        imgcounter--;
+      });
+      var c=0;
+      document.onmousemove = function(){
+        clearInterval(timer);
+        if(mousenotmoving){
+          mousenotmoving = false;
+          inmotion = true;
+        }
+        if(!mousenotmoving){
+          timer = setInterval(function(){
+            var innertimer = setTimeout(function(){
+              if(!inmotion){
+                if(imgcounter ==  imagearr.length){
+                    imgcounter = 0;
+                }
+                if(imgcounter == -1){
+                  imgcounter =4;
+                }
+                
+            
+           
+                console.log('here'+ imgcounter );
+                document.querySelector('img').src="../assets/images/"+imagearr[imgcounter]+"";
+                ++imgcounter;
+                
+                
+              }
+              inmotion = false;
+            },300);
+            console.log(mousenotmoving);
+          },5000);
+        }
+        console.log(mousenotmoving);
+//        timer = setInterval(waiting,3000);
+      }
+      
+      function waiting(){
+        
+      }
+      
+      
+      
+    </script>
+  </body>
+  
+</html>

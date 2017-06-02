@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="js/homejs.js"></script>
+    <script type="text/javascript">
+      var prompted;
+      var onvisted = false;
+      initCookie();
+      console.log(getCookie('visited'));
+//      prompted = prompt('Please enter you first','');
+//      console.log(prompted.toString().split(' '));
+      if(parseInt(getCookie('visited')) == 0){
+        prompted = prompt('Please enter you name');
+        createCookie('username',prompted);
+        onvisted = false;
+      }
+      if(getCookie('username')!= undefined){
+       window.onload = function(){
+         document.querySelector('#welcome').innerHTML=getCookie('username');
+         document.querySelector('#visitedCount').innerHTML = getCookie('visited');
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header></header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="./pages/gallery.html">Gallery</a></li>
+        <li><a href="./pages/about.html">About Me</a></li>
+        <li><a href="./pages/contactme.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div>
+      Wellcome to my site enjoy the visit
+      <span id="welcome"></span><br>
+      You have Visted this page <span id="visitedCount"></span>
+    </div>
+    <div id="content">
+      
+    </div>
+    <script type="text/javascript">
+      //document.write(returnAll('author')); 
+    </script>
+  </body>
+</html>

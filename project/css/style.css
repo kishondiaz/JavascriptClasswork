@@ -1,0 +1,35 @@
+html{
+  height: 100%;
+}
+body{
+  background: linear-gradient(lightblue,lightblue,white);
+  background-repeat: no-repeat;
+  background-blend-mode: hue;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+header{
+  width: 100%;
+  border: 1px solid black;
+  height: 30px;
+  margin-top: -10px;
+  margin-left: -9px;
+  padding-left: 20px;
+  padding-right: 30px;
+}
+nav{
+  border: 1px solid black;
+  display: inline-block;
+  width:100%;
+}
+ul{
+  border: 1px solid red;
+  height: 100%;
+  width:100%;
+}
+li{
+  display: inline-block;
+  margin-right: 25px;
+  border: 1px solid green;
+}
